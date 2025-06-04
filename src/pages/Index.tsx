@@ -1,13 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import MainLayout from "@/components/layout/main-layout";
+import ChemicalInventory from "@/components/home/chemical-inventory";
+import ProcedureFlowchart from "@/components/home/procedure-flowchart";
+import PurchaseForm from "@/components/home/purchase-form";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <MainLayout>
+      <div className="h-[calc(100vh-4rem)] p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Chemical Inventory - Takes up 2 columns on large screens */}
+        <div className="lg:col-span-2">
+          <ChemicalInventory />
+        </div>
+        
+        {/* Right column with Procedure and Purchase */}
+        <div className="space-y-6">
+          <ProcedureFlowchart />
+          <PurchaseForm />
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 
